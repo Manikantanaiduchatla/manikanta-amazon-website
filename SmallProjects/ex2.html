@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .game{
+            padding: 5px 10px 5px 10px;
+            font-weight: bold;
+        }
+        .sub-game{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="js-game1 game" onclick="clickChange('.js-game1')">Gaming</button>
+    <button class="js-game2 game" onclick="clickChange('.js-game2')">Music</button>
+    <button class="js-game3 game" onclick="clickChange('.js-game3')">Tech</button>
+    <script>
+        function clickChange(selector){
+            const game=document.querySelector(selector);
+            if(!game.classList.contains('sub-game')){
+                turnOff();
+                game.classList.add('sub-game');
+            }else{
+                game.classList.remove('sub-game');
+            }
+        }
+        function turnOff(){
+            const turningOff=document.querySelector('.sub-game');
+            if(turningOff){
+                turningOff.classList.remove('sub-game');
+            }
+        }
+    </script>
+</body>
+</html>

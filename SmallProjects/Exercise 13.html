@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excersise 13</title>
+</head>
+<body>
+    <button class="js-button">Click..!</button>
+    <script>
+        const data=document.querySelector('.js-button');
+        const eventListener1=()=>{
+            console.log('Click 1');
+        }
+        data.addEventListener('click',eventListener1);
+        const eventListener2=()=>{
+            console.log('Click 2');
+        }
+        data.addEventListener('click',eventListener2);
+        data.removeEventListener('click',eventListener2);
+    </script>
+</body>
+</html>

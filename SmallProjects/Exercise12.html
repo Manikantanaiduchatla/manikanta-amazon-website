@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exersise 12</title>
+</head>
+<body>
+    <button class="js-button">Start</button>
+    <button class="js-button2">Add to Cart</button>
+    <br><br>
+    <button onclick="add()" class="js-add">Add</button>
+    <button onclick="remove()" class="js-remove">Remove</button>
+    <p class="js-display"></p>
+    <script>
+        const matter=document.querySelector('.js-button');
+        const ans=matter.addEventListener('click',()=>{
+            matter.innerHTML='Loading...';
+            setTimeout(()=>{
+                document.querySelector('.js-button').innerHTML="Finished!";
+            },1000);
+        });
+        
+
+        function clickChange2(){
+            document.querySelector('.js-display').innerHTML='Added To Cart';
+            setTimeout(()=>{
+                document.querySelector('.js-display').innerHTML='';
+            },2000);
+        }
+        let elementId;
+        const msg=document.querySelector('.js-display');
+        const result=msg.addEventListener('click',()=>{
+            clearInterval(elementId);
+            setTimeout(()=>{
+                msg.innerHTML='';
+            },2000);
+        });
+
+        let num=1;
+        const add=document.querySelector('.js-add');
+        const add1=add.addEventListener('click',()=>{
+            return num++;
+        });
+        const rem=document.querySelector('.js-remove');
+        const remove1=rem.addEventListener('click',()=>{
+            return num--;
+        });
+        
+        setInterval(()=>{
+            if(document.title==='App' && num!=0){
+                document.title=`${num} New messages`;
+            }else{
+                document.title='App';
+            }
+        },2000);
+    </script>
+</body>
+</html>
